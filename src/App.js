@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
 import './App.css';
-import { ListCard } from './components/ListCard';
+import { HomeScreen } from './screens/Home';
 
 const fakelist = [
   {
@@ -24,28 +23,9 @@ const fakelist = [
 ]
 
 function App() {
-  const [loading, setLoading] = useState(true);
-  const [marketList, setMarketList] = useState([]);
-
-  const loadList = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setMarketList(fakelist);
-      setLoading(false);
-    }, 1000);
-  }
-
-  useEffect(() => {
-    loadList();
-  }, []);
-
   return (
-    <div className="App">
-      {loading ? <span>Carregando...</span> : marketList.map((item)=> (
-        <ListCard key={`item_${item.id}`} item={item} />
-      ))}
-    </div>
-  );
+    <HomeScreen />
+  )
 }
 
 export default App;
