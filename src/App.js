@@ -1,30 +1,19 @@
 import './App.css';
-import { HomeScreen } from './screens/Home';
-
-const fakelist = [
-  {
-    id: 0,
-    name: 'Arroz',
-    quantity: 2,
-    checked: false
-  },
-  {
-    id: 1,
-    name: 'Feijão',
-    quantity: 1,
-    checked: false
-  },
-  {
-    id: 2,
-    name: 'Macarrão',
-    quantity: 5,
-    checked: false
-  }
-]
+import { HomeScreen, ListScreen } from './screens';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
 
 function App() {
   return (
-    <HomeScreen />
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="/list" element={<ListScreen />} />
+      </Routes>
+    </Router>
   )
 }
 

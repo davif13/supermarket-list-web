@@ -1,7 +1,7 @@
 import './index.css';
 
-export const Button = ({ children }) => {
+export const Button = ({ children, onClick }) => {
   return (
-    <button className='button-container'>{children}</button>
+    <button onClick={onClick} className='button-container'>{children}</button>
   )
 }
