@@ -12,7 +12,7 @@ export const ListScreen = () =>{
     const result = await getList();
     console.log({result});
     setListData(result);
-    //setLoading(false);
+    setLoading(false);
   }
 
   useEffect(() => {
