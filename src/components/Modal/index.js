@@ -2,7 +2,7 @@ import './index.css';
 import { useEffect, useState } from 'react';
 import { Input } from '../Input';
 import { Button } from '../Button';
-import { createItem, updateItem } from '../../services/requests';
+import { createItem, updateItem, deleteItem } from '../../services/requests';
 
 export const Modal = ({ onClose, item }) => {
   const [name, setName] = useState('');
@@ -49,6 +49,14 @@ export const Modal = ({ onClose, item }) => {
     }
   }
 
+  const callDeleteItem = async () => {
+    const result = await deleteItem(item?._id);
+    if (!result?.error){
+      alert('Item salvo com sucesso');
+      onClose();
+    }
+  }
+
   useEffect(() => {
     if (item?.name && item?.quantity) {
       setName(item?.name);
@@ -73,12 +81,18 @@ export const Modal = ({ onClose, item }) => {
         value={quantity} 
         label='Quantidade'
         type='number' />
-        <div className='modal-spacer'></div>
-        <Button onClick={item ? callUpdateItem : callAddItem}>
-          {
-            item ? 'Atualizar' : 'Adicionar'
+       <div className='buttons-container'>
+        {item && (
+            <Button variant='outline' onClick={callDeleteItem} icon="trash">
+            Deletar Item
+          </Button>)
           }
-        </Button>
+          <Button onClick={item ? callUpdateItem : callAddItem}>
+            {
+              item ? 'Atualizar' : 'Adicionar'
+            }
+          </Button>
+       </div>
       </div>
     </div>
   )
