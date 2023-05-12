@@ -11,6 +11,5 @@ export const ListRender = ({ list }) => {
         list.map((item) => (<ListCard key={item?._id} item={item} />))
       }
     </div>
-    
   )
 }
