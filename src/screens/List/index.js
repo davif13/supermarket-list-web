@@ -7,6 +7,7 @@ export const ListScreen = () =>{
   const [modalVisible, setModalVisible] = useState(false);
   const [loading, setLoading] = useState(true);
   const [listData, setListData] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const loadListItems = async () =>{
     setLoading(true);
@@ -16,11 +17,19 @@ export const ListScreen = () =>{
   }
 
   const onClickAddButton = () => {
+    setSelectedItem(null);
     setModalVisible(true);
   }
 
   const onCloseModal = () => {
     setModalVisible(false);
+    loadListItems();
+    setSelectedItem(null);
+  }
+
+  const onEditItem = (item) => {
+    setSelectedItem(item);
+    setModalVisible(true);
   }
 
   useEffect(() => {
@@ -40,12 +49,12 @@ export const ListScreen = () =>{
         </div>
         <div className='list-screen-list-container'>
           {
-            loading ? <Loader /> : <ListRender list={listData} />
+            loading ? <Loader /> : <ListRender onEdit={onEditItem} list={listData} />
           }
         </div>
       </div>
       {
-        modalVisible && <Modal onClose={onCloseModal} />
+        modalVisible && <Modal item={selectedItem} onClose={onCloseModal} />
       }
     </div>
   );

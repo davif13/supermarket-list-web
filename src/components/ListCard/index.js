@@ -1,9 +1,9 @@
 import './index.css';
 
-export const ListCard = (props) => {
-  const { item } = props;
+export const ListCard = ({ item, onClick }) => {
+  
   return (
-    <div className="list-card-container">
+    <div className="list-card-container" onClick={() => onClick(item)}>
       <img
       className='checkbox' 
       src={`/images/${item?.checked ? 'checked.svg' : 'unchecked.svg'} `} 
