@@ -1,5 +1,5 @@
 import './index.css'
-import { getList } from "../../services/requests";
+import { getList, updateItem } from "../../services/requests";
 import { useEffect, useState } from "react";
 import { Button, ListRender, Loader, Modal } from '../../components/';
 
@@ -32,6 +32,18 @@ export const ListScreen = () =>{
     setModalVisible(true);
   }
 
+  const onCheckItem = async (item) => {
+    const result = await updateItem(item?._id, {
+      name: item.name,
+      quantity: Number(item.quantity),
+      checked: !item.checked
+    });
+
+    if (!result.error) {
+      await loadListItems()
+    }
+  }
+
   useEffect(() => {
     loadListItems();
   }, [])
@@ -49,7 +61,7 @@ export const ListScreen = () =>{
         </div>
         <div className='list-screen-list-container'>
           {
-            loading ? <Loader /> : <ListRender onEdit={onEditItem} list={listData} />
+            loading ? <Loader /> : <ListRender onCheckItem={onCheckItem} onEdit={onEditItem} list={listData} />
           }
         </div>
       </div>
