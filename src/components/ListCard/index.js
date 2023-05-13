@@ -1,6 +1,6 @@
 import './index.css';
 
-export const ListCard = ({ item, onClick, onCheckItem}) => {
+export const ListCard = ({ item, onClick, onCheckItem }) => {
   
   return (
     <div className="list-card-container">
@@ -14,9 +14,8 @@ export const ListCard = ({ item, onClick, onCheckItem}) => {
         <span className='list-card-title'>{item?.name}</span>
         <span className='list-card-subtitle'>{item?.quantity} unidades</span>
       </div>
-      <div className='arrow-icon-container'>
+      <div className='arrow-icon-container' onClick={() => onClick(item)}>
         <img
-        onClick={() => onClick(item)} 
         src="/images/arrow.svg" 
         alt="arrow-icon" 
         className='arrow-icon' />
