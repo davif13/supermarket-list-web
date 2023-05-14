@@ -75,12 +75,14 @@ export const Modal = ({ onClose, item }) => {
         onChange={(text) => setName(text)}
         value={name} 
         label='Nome' 
-        placeholder='Ex: Macarrão' />
+        placeholder='Ex: Macarrão' 
+        />
         <Input
         onChange={(text) => setQuantity(text)}
         value={quantity} 
         label='Quantidade'
-        type='number' />
+        type='number'
+        handleKeyDown={item ? callUpdateItem : callAddItem} />
        <div className='buttons-container'>
         {item && (
             <Button variant='outline' onClick={callDeleteItem} icon="trash">
