@@ -53,3 +53,9 @@
   height: 12px;
   object-fit: contain;
  }
+
+ @media screen and (max-width: 420px) {
+  .list-card-container {
+    width: 68vw;
+  }
+}

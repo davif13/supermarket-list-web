@@ -52,7 +52,7 @@ export const Modal = ({ onClose, item }) => {
   const callDeleteItem = async () => {
     const result = await deleteItem(item?._id);
     if (!result?.error){
-      alert('Item salvo com sucesso');
+      alert('Item excluído com sucesso');
       onClose();
     }
   }
