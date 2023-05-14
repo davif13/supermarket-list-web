@@ -2,7 +2,7 @@
   display: flex;
   width: 100vw;
   height: 100vh;
-  background-color: #7785db;
+  background-color: #AD313B;
   align-items: center;
   justify-content: center;
 }
@@ -20,8 +20,8 @@
 
 
 .shopping-bag-image {
-  width: 180px;
-  height: 180px;
+  width: 10rem;
+  height: 10rem;
 }
 
 .home-screen-title {
@@ -50,6 +50,11 @@
 }
 
 @media screen and (max-width: 420px) {
+  .home-screen-container {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
   .home-screen-content-container {
     display: flex;
     flex-direction: column;
@@ -64,6 +69,11 @@
 }
 
 @media screen and (min-width: 421px) and (max-width: 830px) {
+  .home-screen-container {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
   .home-screen-content-container {
     width: 500px;
     max-width: 500px;

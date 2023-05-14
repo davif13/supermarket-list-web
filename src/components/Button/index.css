@@ -10,18 +10,18 @@
   height: 42px;
   border: 0px;
   cursor: pointer;
-  border: 1px solid #7765db;
+  border: 1px solid #AD313B;
 }
 
 
 .main {
-  background-color: #7785db;
+  background-color: #AD313B;
   color: #FFFFFF;
 }
 
 .outline {
   background-color: #F2F4FF;
-  color: #7765db;
+  color: #AD313B;
 }
 
 .button-icon {
