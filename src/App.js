@@ -1,12 +1,12 @@
-import './App.css';
-import { HomeScreen, ListScreen } from './screens';
+import './App.css'
+import { HomeScreen, ListScreen } from 'screens'
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-} from 'react-router-dom';
+  Route
+} from 'react-router-dom'
 
-function App() {
+function App () {
   return (
     <Router>
       <Routes>
@@ -17,4 +17,4 @@ function App() {
   )
 }
 
-export default App;
+export default App

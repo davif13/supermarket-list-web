@@ -1,22 +1,22 @@
-import './index.css';
-import { Button, Input } from '../../components/';
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import { SAVE_USERNAME_PATH } from '../../services/constants';
+import './index.css'
+import { Button, Input } from 'components'
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { SAVE_USERNAME_PATH } from 'services/constants'
 
 export const HomeScreen = () => {
-  const navigate = useNavigate();
-  const [username, setUsername] = useState("");
+  const navigate = useNavigate()
+  const [username, setUsername] = useState('')
 
   const onClickContinue = () => {
-    if(username.length < 3) {
-      alert('Usuário deve conter mais de 3 caracteres.');
-      return;
+    if (username.length < 3) {
+      alert('Usuário deve conter mais de 3 caracteres.')
+      return
     }
-    localStorage.setItem(SAVE_USERNAME_PATH, username);
-    navigate("/list");
+    localStorage.setItem(SAVE_USERNAME_PATH, username)
+    navigate('/list')
   }
-  
+
   return (
     <div className='home-screen-container'>
       <div className='home-screen-content-container'>
@@ -26,8 +26,8 @@ export const HomeScreen = () => {
         <h3 className='home-screen-subtitle-description'>Digite abaixo seu usuário para ter acesso à sua lista de compras:</h3>
         <Input
         onChange={(text) => setUsername(text)}
-        value={username} 
-        label='Username' 
+        value={username}
+        label='Username'
         placeholder='Ex: usuario1'
         handleKeyDown={onClickContinue} />
         <div className='home-screen-button-container'>

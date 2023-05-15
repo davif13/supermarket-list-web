@@ -1,66 +1,67 @@
-import './index.css';
-import { useEffect, useState } from 'react';
-import { Input } from '../Input';
-import { Button } from '../Button';
-import { createItem, updateItem, deleteItem } from '../../services/requests';
+import './index.css'
+import { useEffect, useState } from 'react'
+import { Input } from 'components/Input'
+import { Button } from 'components/Button'
+import { createItem, updateItem, deleteItem } from 'services/requests'
 
 export const Modal = ({ onClose, item }) => {
-  const [name, setName] = useState('');
-  const [quantity, setQuantity] = useState(1);
+  const [name, setName] = useState('')
+  const [quantity, setQuantity] = useState(1)
 
   const validateBeforeSave = () => {
     if (name.length < 3) {
-      alert('Nome deve ter mais de dois caracteres');
-      return false;
+      alert('Nome deve ter mais de dois caracteres')
+      return false
     }
 
     if (quantity < 1) {
-      alert('Quantidade deve ser maior que zero');
-      return false;
+      alert('Quantidade deve ser maior que zero')
+      return false
     }
 
-    return true;
+    return true
   }
 
   const callAddItem = async () => {
-    const validate = validateBeforeSave();
+    const validate = validateBeforeSave()
 
     if (validate) {
-      const result = await createItem({ name, quantity: Number(quantity) });
-      if (!result?.error){
-        alert('Item salvo com sucesso');
-        onClose();
+      const result = await createItem({ name, quantity: Number(quantity) })
+      if (!result?.error) {
+        alert('Item salvo com sucesso')
+        onClose()
       }
     }
   }
 
   const callUpdateItem = async () => {
-    const validate = validateBeforeSave();
+    const validate = validateBeforeSave()
 
     if (validate) {
-      const result = await updateItem(item?._id, { 
-        name, 
+      const result = await updateItem(item?._id, {
+        name,
         quantity: Number(quantity),
-        checked: item?.checked });
-      if (!result?.error){
-        alert('Item salvo com sucesso');
-        onClose();
+        checked: item?.checked
+      })
+      if (!result?.error) {
+        alert('Item salvo com sucesso')
+        onClose()
       }
     }
   }
 
   const callDeleteItem = async () => {
-    const result = await deleteItem(item?._id);
-    if (!result?.error){
-      alert('Item excluído com sucesso');
-      onClose();
+    const result = await deleteItem(item?._id)
+    if (!result?.error) {
+      alert('Item excluído com sucesso')
+      onClose()
     }
   }
 
   useEffect(() => {
     if (item?.name && item?.quantity) {
-      setName(item?.name);
-      setQuantity(item?.quantity);
+      setName(item?.name)
+      setQuantity(item?.quantity)
     }
   }, [item])
 
@@ -73,13 +74,13 @@ export const Modal = ({ onClose, item }) => {
         </div>
         <Input
         onChange={(text) => setName(text)}
-        value={name} 
-        label='Nome' 
-        placeholder='Ex: Macarrão' 
+        value={name}
+        label='Nome'
+        placeholder='Ex: Macarrão'
         />
         <Input
         onChange={(text) => setQuantity(text)}
-        value={quantity} 
+        value={quantity}
         label='Quantidade'
         type='number'
         handleKeyDown={item ? callUpdateItem : callAddItem} />
