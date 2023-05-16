@@ -1,7 +1,8 @@
 import './index.css'
 import { useEffect, useState } from 'react'
 import { Input } from 'components/Input'
-import { Button } from 'components/Button'
+import { Button } from 'components/Atoms/Button'
+import { Title } from 'components/Atoms'
 import { createItem, updateItem, deleteItem } from 'services/requests'
 
 export const Modal = ({ onClose, item }) => {
@@ -69,7 +70,7 @@ export const Modal = ({ onClose, item }) => {
     <div className='modal'>
       <div className='modal-content'>
         <div className='modal-header'>
-          <h1>{item ? 'Editar Item' : 'Adicionar Novo Item'}</h1>
+          <Title>{item ? 'Editar Item' : 'Adicionar Novo Item'}</Title>
           <button onClick={onClose} className='modal-close-button' />
         </div>
         <Input

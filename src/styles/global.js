@@ -38,20 +38,6 @@ export const GlobalStyle = createGlobalStyle`
     monospace;
   }
 
-  h1 {
-    font-weight: bold;
-    font-size: 1.3rem;
-    color: #000000;
-    line-height: 22px;
-  }
-
-  h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 0px;
-    padding: 0px;
-  }
-
   ::-webkit-scrollbar {
     visibility: hidden;
     width: 0px;

@@ -39,27 +39,8 @@ export const BagImage = styled.img.attrs({
   src: '/images/shopping-bag.svg',
   alt: 'Shopping-bag'
 })`
-  width: 72px;
-  height: 72px;
-`
-
-export const HomeTitle = styled.h1`
-  max-width: 250px;
-  text-align: center;
-
-  @media (min-width: 421px) and (max-width: 830px) {
-    max-width: 350px;
-  }
-`
-
-export const HomeSubtitle = styled.h3`
-  max-width: ${({ maxwidth }) => maxwidth || 250}px;
-  text-align: ${({ txalign }) => txalign || 'center'};
-  margin-bottom: ${({ mgbottom }) => mgbottom || 40}px;
-
-  @media (min-width: 421px) and (max-width: 830px) {
-    max-width: 350px;
-  }
+  width: 120px;
+  height: 120px;
 `
 
 export const ButtonContainer = styled.div`
