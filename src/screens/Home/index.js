@@ -1,8 +1,8 @@
-import './index.css'
 import { Button, Input } from 'components'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { SAVE_USERNAME_PATH } from 'services/constants'
+import { ScreenContainer, ContentContainer, BagImage, HomeTitle, HomeSubtitle, ButtonContainer } from './styles'
 
 export const HomeScreen = () => {
   const navigate = useNavigate()
@@ -18,22 +18,22 @@ export const HomeScreen = () => {
   }
 
   return (
-    <div className='home-screen-container'>
-      <div className='home-screen-content-container'>
-        <img className='shopping-bag-image' src='/images/shopping-bag.svg' alt='Shopping bag' />
-        <h1 className='home-screen-title'>Sua lista de supermercado mais fácil do que nunca!</h1>
-        <h3 className='home-screen-subtitle'>Ajudamos você a organizar sua lista de compras de forma descomplicada</h3>
-        <h3 className='home-screen-subtitle-description'>Digite abaixo seu usuário para ter acesso à sua lista de compras:</h3>
+    <ScreenContainer>
+      <ContentContainer>
+        <BagImage/>
+        <HomeTitle>Sua lista de supermercado mais fácil do que nunca!</HomeTitle>
+        <HomeSubtitle>Ajudamos você a organizar sua lista de compras de forma descomplicada</HomeSubtitle>
+        <HomeSubtitle maxwidth={350} txalign={'left'} mgbottom={16}>Digite abaixo seu usuário para ter acesso à sua lista de compras:</HomeSubtitle>
         <Input
         onChange={(text) => setUsername(text)}
         value={username}
         label='Username'
         placeholder='Ex: usuario1'
         handleKeyDown={onClickContinue} />
-        <div className='home-screen-button-container'>
+        <ButtonContainer>
           <Button onClick={onClickContinue} >Login</Button>
-        </div>
-      </div>
-    </div>
+        </ButtonContainer>
+      </ContentContainer>
+    </ScreenContainer>
   )
 }
