@@ -1,6 +1,6 @@
 # :chart_with_upwards_trend: SuperMarket List App
 
-This is a web application that helps users manage their supermarket list! The application was built with React.js, Axios and Styled Components. It uses an API to create, retrieve, update and delete the list information (CRUD).
+This is a web application that helps users manage their supermarket list! The application was built with React.js, Axios and Styled Components. It uses an API to create, retrieve, update and delete the items in the list (CRUD).
 
 ## :wrench: Features
 
@@ -28,7 +28,7 @@ Prettier
 Clone the project:
 `git clone https://github.com/davif13/supermarket-list-web.git`
 
-Install the dependecies:
+Install the dependencies:
 `cd supermarket-list-web && npm install`
 
 Run the project:
