@@ -2,6 +2,8 @@
 
 This is a web application that helps users manage their supermarket list! The application was built with React.js, Axios and Styled Components. It uses an API to create, retrieve, update and delete the items in the list (CRUD).
 
+(![Live Deploy SuperMarket List](images/Supermarket.gif))
+
 ## :wrench: Features
 
 The application provides the following features:
@@ -39,7 +41,7 @@ Run the project:
 
 ## :computer: Deployment (Live Link)
 
-This application is deployed on Vercel, which means you can access it online, right now! To access the deployed application, simply follow this link: https://davif13.github.io/wallet-app-frontend/
+This application is deployed on Vercel, which means you can access it online, right now! To access the deployed application, simply follow this link: https://supermarket-list-web-davif13.vercel.app/
 
 Use the username "teste" to login!
 
