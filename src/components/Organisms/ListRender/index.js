@@ -1,13 +1,13 @@
-import { ListCard } from 'components'
-import './index.css'
+import { ListCard, SubTitle } from 'components'
+import { ListRenderContainer } from './styles'
 
 export const ListRender = ({ list, onEdit, onCheckItem }) => {
   if (list?.length === 0) {
-    return <h3>Sua lista está vazia, crie um novo item clicando em "Adicionar"</h3>
+    return <SubTitle>Sua lista está vazia, crie um novo item clicando em "Adicionar"</SubTitle>
   }
 
   return (
-    <div className="list-render-container">
+    <ListRenderContainer>
       {
         list.map((item) =>
           (<ListCard
@@ -16,6 +16,6 @@ export const ListRender = ({ list, onEdit, onCheckItem }) => {
           item={item}
           onCheckItem={onCheckItem} />))
       }
-    </div>
+    </ListRenderContainer>
   )
 }

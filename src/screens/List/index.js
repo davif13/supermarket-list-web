@@ -1,7 +1,16 @@
-import './index.css'
 import { getList, updateItem } from 'services/requests'
 import { useEffect, useState } from 'react'
-import { Button, ListRender, Modal, Loader, Title } from 'components'
+import { ListRender, Modal } from 'components/Organisms'
+import { Button, Loader, Title } from 'components/Atoms'
+import {
+  ListScreenContainer,
+  ListScreenContentContainer,
+  ListScreenHeaderContainer,
+  ListScreenTitleContainer,
+  ListScreenHeaderButtonContainer,
+  LogoImage,
+  ListScreenListContainer
+} from './styles'
 
 export const ListScreen = () => {
   const [modalVisible, setModalVisible] = useState(false)
@@ -48,28 +57,28 @@ export const ListScreen = () => {
     loadListItems()
   }, [])
   return (
-    <div className="list-screen-container">
-      <div className="list-screen-content-container">
-        <div className="list-screen-header">
-          <div className='list-screen-title-container'>
-            <img className='logo-image' src="/images/grocery-cart.png" alt="Supermarket List Logo"/>
+    <ListScreenContainer>
+      <ListScreenContentContainer>
+        <ListScreenHeaderContainer>
+          <ListScreenTitleContainer>
+            <LogoImage src="/images/grocery-cart.png" alt="Supermarket List Logo"/>
             <Title fontsize={1.8} ml={12} align='left' lineheight={24}>Lista Supermercado</Title>
-          </div>
-          <div className='list-screen-header-button-container'>
+          </ListScreenTitleContainer>
+          <ListScreenHeaderButtonContainer>
             <Button onClick={onClickAddButton}>
               {window.innerWidth <= 420 ? '+' : 'Adicionar'}
             </Button>
-          </div>
-        </div>
-        <div className='list-screen-list-container'>
+          </ListScreenHeaderButtonContainer>
+        </ListScreenHeaderContainer>
+        <ListScreenListContainer>
           {
             loading ? <Loader /> : <ListRender onCheckItem={onCheckItem} onEdit={onEditItem} list={listData} />
           }
-        </div>
-      </div>
+        </ListScreenListContainer>
+      </ListScreenContentContainer>
       {
         modalVisible && <Modal item={selectedItem} onClose={onCloseModal} />
       }
-    </div>
+    </ListScreenContainer>
   )
 }
