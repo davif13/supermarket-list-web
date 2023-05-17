@@ -2,7 +2,7 @@
 
 This is a web application that helps users manage their supermarket list! The application was built with React.js, Axios and Styled Components. It uses an API to create, retrieve, update and delete the items in the list (CRUD).
 
-(![Live Deploy SuperMarket List](images/Supermarket.gif))
+(![Live Deploy SuperMarket List](./public/images/Supermarket.gif))
 
 ## :wrench: Features
 
