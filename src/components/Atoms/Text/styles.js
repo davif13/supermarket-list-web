@@ -31,3 +31,10 @@ export const SubTitle = styled.h3`
     max-width: 350px;
   }
 `
+
+export const SmallText = styled.span`
+  font-size: ${({ fontsize }) => fontsize || 1}rem;
+  text-align: ${({ align }) => align || 'center'};
+  font-weight: ${({ fontweight }) => fontweight || 500};
+  margin-bottom: ${({ mb }) => mb || 0}px;
+`

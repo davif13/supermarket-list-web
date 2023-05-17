@@ -10,7 +10,7 @@ export const Loader = styled.span`
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 
-  ::after {
+  &:after {
     content: '';  
     box-sizing: border-box;
     position: absolute;
