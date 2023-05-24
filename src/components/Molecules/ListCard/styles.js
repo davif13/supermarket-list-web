@@ -14,7 +14,7 @@ export const ListCardContainer = styled.div`
   margin-bottom: 22px;
 
   @media (max-width: 420px) {
-    width: 68vw;
+    width: 75vw;
   }
 `
 

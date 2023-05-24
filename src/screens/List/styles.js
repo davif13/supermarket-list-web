@@ -22,7 +22,7 @@ export const ListScreenContentContainer = styled.div`
   overflow: hidden;
 
   @media (max-width: 420px) {
-    width: 75vw;
+    width: 96vw;
   }
 `
 

@@ -21,17 +21,13 @@ export const ContentContainer = styled.div`
   justify-content: center;
   width: 420px;
   height: 90vh;
-  background-color: #FFFFFF;
+  background-color: ${({ theme }) => theme.colors.white};
   border-radius: 24px;
 
   @media (max-width: 420px) {
-    max-width: 370px;
-  }
-
-  @media (min-width: 421px) and (max-width: 830px) {
-    width: 500px;
-    max-width: 500px;
-    height: 60vh;
+    max-width: 320px;
+    max-height: 600px;
+    padding: 12px;
   }
 `
 

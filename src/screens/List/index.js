@@ -61,8 +61,19 @@ export const ListScreen = () => {
       <ListScreenContentContainer>
         <ListScreenHeaderContainer>
           <ListScreenTitleContainer>
-            <LogoImage src="/images/grocery-cart.png" alt="Supermarket List Logo"/>
-            <Title fontsize={1.8} ml={12} align='left' lineheight={24}>Lista Supermercado</Title>
+            <LogoImage
+              src="/images/grocery-cart.png"
+              alt="Supermarket List Logo"
+            />
+            <Title
+              fontsizemob={1.2}
+              fontsize={1.8}
+              ml={12}
+              align="left"
+              lineheight={24}
+            >
+              Lista Supermercado
+            </Title>
           </ListScreenTitleContainer>
           <ListScreenHeaderButtonContainer>
             <Button onClick={onClickAddButton}>
@@ -71,14 +82,18 @@ export const ListScreen = () => {
           </ListScreenHeaderButtonContainer>
         </ListScreenHeaderContainer>
         <ListScreenListContainer>
-          {
-            loading ? <Loader /> : <ListRender onCheckItem={onCheckItem} onEdit={onEditItem} list={listData} />
-          }
+          {loading ? (
+            <Loader />
+          ) : (
+            <ListRender
+              onCheckItem={onCheckItem}
+              onEdit={onEditItem}
+              list={listData}
+            />
+          )}
         </ListScreenListContainer>
       </ListScreenContentContainer>
-      {
-        modalVisible && <Modal item={selectedItem} onClose={onCloseModal} />
-      }
+      {modalVisible && <Modal item={selectedItem} onClose={onCloseModal} />}
     </ListScreenContainer>
   )
 }

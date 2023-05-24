@@ -12,7 +12,7 @@ export const InputContainer = styled.div`
   margin-bottom: 16px;
 
   @media (max-width: 420px) {
-    max-width: 320px;
+    max-width: 300px;
   }
 `
 
