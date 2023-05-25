@@ -21,7 +21,7 @@ export const ListScreenContentContainer = styled.div`
   padding: 24px;
   overflow: hidden;
 
-  @media (max-width: 420px) {
+  @media (max-width: 480px) {
     width: 96vw;
   }
 `
@@ -42,7 +42,7 @@ export const ListScreenTitleContainer = styled.div`
 export const ListScreenHeaderButtonContainer = styled.div`
   width: 160px;
 
-  @media (max-width: 420px) {
+  @media (max-width: 480px) {
     width: 42px;
   }
 `
@@ -51,7 +51,7 @@ export const LogoImage = styled.img`
   width: 72px;
   height: 72px;
 
-  @media (max-width: 420px) {
+  @media (max-width: 480px) {
     width: 34px;
     height: auto;
   }

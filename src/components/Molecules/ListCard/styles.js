@@ -13,8 +13,8 @@ export const ListCardContainer = styled.div`
   border-radius: 24px;
   margin-bottom: 22px;
 
-  @media (max-width: 420px) {
-    width: 75vw;
+  @media (max-width: 480px) {
+    width: 80vw;
   }
 `
 

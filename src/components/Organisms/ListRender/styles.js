@@ -10,7 +10,7 @@ export const ListRenderContainer = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
 
-  @media (max-width: 420px) {
-    width: 70vw;
+  @media (max-width: 480px) {
+    width: 80vw;
   }
 `

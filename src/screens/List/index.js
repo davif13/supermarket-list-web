@@ -77,7 +77,7 @@ export const ListScreen = () => {
           </ListScreenTitleContainer>
           <ListScreenHeaderButtonContainer>
             <Button onClick={onClickAddButton}>
-              {window.innerWidth <= 420 ? '+' : 'Adicionar'}
+              {window.innerWidth <= 480 ? '+' : 'Adicionar'}
             </Button>
           </ListScreenHeaderButtonContainer>
         </ListScreenHeaderContainer>

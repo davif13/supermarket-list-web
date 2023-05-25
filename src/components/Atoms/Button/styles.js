@@ -13,10 +13,12 @@ export const ButtonContainer = styled.button`
   border: 0px;
   cursor: pointer;
   border: 1px solid ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme, outline }) => outline ? theme.colors.light : theme.colors.primary};
-  color: ${({ theme, outline }) => outline ? theme.colors.primary : theme.colors.light};
+  background-color: ${({ theme, outline }) =>
+    outline ? theme.colors.light : theme.colors.primary};
+  color: ${({ theme, outline }) =>
+    outline ? theme.colors.primary : theme.colors.light};
 
-  @media (max-width: 420px) {
+  @media (max-width: 480px) {
     max-width: 320px;
   }
 `

@@ -25,11 +25,11 @@ export const ModalContentContainer = styled.div`
   padding-left: 24px;
   padding-right: 24px;
 
-  @media (max-width: 420px) {
+  @media (max-width: 480px) {
     width: 100vw;
   }
 
-  @media (min-width: 421px) and (max-width: 830px) {
+  @media (min-width: 481px) and (max-width: 830px) {
     width: 42vw;
   }
 `
@@ -64,7 +64,7 @@ export const ModalButtonsContainer = styled.div`
   justify-content: space-between;
   margin-top: 49vh;
 
-  @media (min-width: 421px) and (max-width: 830px) {
+  @media (min-width: 481px) and (max-width: 830px) {
     height: 10vh;
   }
 `
