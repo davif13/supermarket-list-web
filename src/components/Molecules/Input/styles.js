@@ -26,6 +26,7 @@ export const InputLabel = styled.label`
 
 export const InputText = styled.input`
   border: 0px transparent;
+  background: transparent;
   padding-top: 4px;
   margin-left: 6px;
   font-size: 16px;
@@ -33,11 +34,5 @@ export const InputText = styled.input`
 
   &:focus {
     outline: none;
-  }
-
-  @media (max-width: 480px) {
-    padding-top: 0px;
-    margin-top: -2px;
-    font-size: 14px;
   }
 `
