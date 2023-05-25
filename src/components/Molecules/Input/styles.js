@@ -34,4 +34,8 @@ export const InputText = styled.input`
   &:focus {
     outline: none;
   }
+
+  @media (max-width: 480px) {
+    padding-top: 2px;
+  }
 `
