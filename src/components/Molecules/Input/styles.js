@@ -11,7 +11,7 @@ export const InputContainer = styled.div`
   border: 2px solid ${({ theme }) => theme.colors.primary};
   margin-bottom: 16px;
 
-  @media (max-width: 420px) {
+  @media (max-width: 480px) {
     max-width: 300px;
   }
 `
