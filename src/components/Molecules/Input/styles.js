@@ -36,6 +36,7 @@ export const InputText = styled.input`
   }
 
   @media (max-width: 480px) {
-    padding-top: 2px;
+    padding-top: 0px;
+    margin-top: -2px;
   }
 `
