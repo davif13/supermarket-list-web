@@ -5,7 +5,7 @@ export const getList = async () => {
     const result = await api.get('/list-items')
     return result.data
   } catch (error) {
-    alert('Erro ao buscar dados da API')
+    alert('Erro ao buscar dados. Favor atualize a página.')
     return { error }
   }
 }
